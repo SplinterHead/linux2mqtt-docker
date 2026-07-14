@@ -1,5 +1,10 @@
 # Linux2MQTT Docker Image
 
+[![Version](https://img.shields.io/pypi/v/linux2mqtt?label=version)](https://pypi.org/project/linux2mqtt/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/SplinterHead/linux2mqtt-docker)
+[![Docker Hub](https://img.shields.io/badge/Docker_Hub-splinterhead%2Flinux2mqtt-2496ED?logo=docker)](https://hub.docker.com/r/splinterhead/linux2mqtt)
+[![Built with Gemini](https://img.shields.io/badge/Built%20with-Gemini-8E75B2?logo=googlegemini)](https://gemini.google.com/)
+
 This directory contains the necessary instructions to build a lightweight, containerized version of the `linux2mqtt` system metric reporting utility. This image wraps the Python `linux2mqtt` package and provides a robust, environment-variable-driven entrypoint designed perfectly for automated deployments in an orchestration cluster.
 
 By running this image dynamically across your cluster nodes (for example, as a global service), you can passively collect performance and hardware metrics from every node and ship them to an MQTT broker like Mosquitto for ingestion into Home Assistant.
