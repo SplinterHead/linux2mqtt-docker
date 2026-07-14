@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.24
 
 # Install python3 and pip, along with pre-compiled packages for psutil and paho-mqtt
 # We use --break-system-packages and --no-deps so pip only installs linux2mqtt and not its dependencies (which we just installed via apk).
