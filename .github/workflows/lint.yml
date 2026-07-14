@@ -1,0 +1,22 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        # We ignore SC2086 because the script intentionally relies on word splitting
+        # to construct the $CMD variable and execute it cleanly via `exec`.
+        # We ignore SC2153 because all variables are passed in from the environment,
+        # which Shellcheck mistakenly identifies as misspellings.
+        run: shellcheck -e SC2086 -e SC2153 entrypoint.sh
