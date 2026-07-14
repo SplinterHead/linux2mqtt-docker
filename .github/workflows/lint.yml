@@ -17,4 +17,6 @@ jobs:
       - name: Run ShellCheck
         # We ignore SC2086 because the script intentionally relies on word splitting
         # to construct the $CMD variable and execute it cleanly via `exec`.
-        run: shellcheck -e SC2086 entrypoint.sh
+        # We ignore SC2153 because all variables are passed in from the environment,
+        # which Shellcheck mistakenly identifies as misspellings.
+        run: shellcheck -e SC2086 -e SC2153 entrypoint.sh
